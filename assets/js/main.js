@@ -20,7 +20,7 @@
 
   var toast = document.querySelector('.toast');
   var toastTimer;
-  document.querySelectorAll('.brick:not(.brick--ghost)').forEach(function(b){
+  document.querySelectorAll('button.brick[data-cat]').forEach(function(b){
     b.addEventListener('click', function(){
       var cat = b.getAttribute('data-cat');
       toast.textContent = 'התמונות של "' + cat + '" יתווספו בקרוב';

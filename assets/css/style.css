@@ -126,6 +126,7 @@
     gap:.75rem;
     font-family:var(--font-display);
     font-size:1.15rem;
+    text-decoration:none;
   }
   .brand-mark{
     width:34px; height:26px;
@@ -323,6 +324,7 @@
     gap:1.5rem;
   }
   .brick{
+    display:block;
     grid-column:span 12;
     position:relative;
     border:3px solid var(--line);
@@ -331,6 +333,7 @@
     box-shadow:6px 6px 0 var(--line);
     cursor:pointer;
     text-align:start;
+    text-decoration:none;
     font-family:var(--font-body);
     transition:transform .12s ease, box-shadow .12s ease;
     opacity:0;
@@ -462,4 +465,59 @@
   @media (prefers-reduced-motion:reduce){
     *{ animation:none !important; transition:none !important; }
     .figure-frame,.hero h1 span,.hero p.lead,.hero .cta-row,.eyebrow,.brick{ opacity:1; transform:none; }
+  }
+
+  /* ---------- album pages ---------- */
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    font-family:var(--font-body);
+    font-size:.9rem;
+    color:var(--muted);
+    text-decoration:none;
+    margin-block-end:1.5rem;
+    transition:color .15s ease;
+  }
+  .back-link:hover{ color:var(--text); }
+  .back-link svg{ width:16px; height:16px; transform:scaleX(-1); }
+
+  .album{ padding-block:clamp(2.5rem,6vw,4rem); }
+  .album h1{
+    font-family:var(--font-display);
+    font-size:clamp(2rem,4vw,3rem);
+    margin:.4rem 0 .75rem;
+    text-wrap:balance;
+  }
+  .album .lead{
+    color:var(--muted);
+    max-width:38rem;
+    margin:0 0 2.5rem;
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:1.5rem;
+  }
+  .gallery-item{
+    margin:0;
+    border:3px solid var(--line);
+    border-radius:14px;
+    box-shadow:6px 6px 0 var(--line);
+    overflow:hidden;
+    background:var(--plate-raised);
+  }
+  .gallery-item img{
+    display:block;
+    width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+  }
+  .gallery-empty{
+    border:3px dashed var(--line);
+    border-radius:14px;
+    padding:3rem 1.5rem;
+    text-align:center;
+    color:var(--muted);
   }
