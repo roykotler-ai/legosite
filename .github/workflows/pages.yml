@@ -25,8 +25,14 @@ jobs:
       - name: Stage site files
         run: |
           mkdir _site
-          cp index.html _site/
-          cp -r assets _site/
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.claude' \
+            --exclude='images' \
+            --exclude='_site' \
+            --exclude='/*.png' \
+            ./ _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
