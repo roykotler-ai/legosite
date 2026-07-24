@@ -26,11 +26,11 @@ jobs:
         run: |
           mkdir _site
           rsync -a \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='.claude' \
-            --exclude='images' \
-            --exclude='_site' \
+            --exclude='/.git' \
+            --exclude='/.github' \
+            --exclude='/.claude' \
+            --exclude='/images' \
+            --exclude='/_site' \
             --exclude='/*.png' \
             ./ _site/
       - uses: actions/upload-pages-artifact@v3
